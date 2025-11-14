@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contoh Silogisme Logika</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    padding: 30px;
+  }
+  h2 { color: #2c3e50; }
+  .box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ccc;
+    max-width: 400px;
+  }
+  input, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+  }
+  #hasil {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #1e8449;
+  }
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Program Silogisme Sederhana</h2>
+  <label>Premis Mayor:</label>
+  <input type="text" id="premis1" value="Semua manusia akan mati.">
+  
+  <label>Premis Minor:</label>
+  <input type="text" id="premis2" value="Socrates adalah manusia.">
+  
+  <button onclick="tarikKesimpulan()">Tarik Kesimpulan</button>
+  
+  <p id="hasil"></p>
+</div>
+
+<script>
+function tarikKesimpulan() {
+  let p1 = document.getElementById("premis1").value.toLowerCase();
+  let p2 = document.getElementById("premis2").value.toLowerCase();
+  let hasil = "";
+
+  // Logika silogisme sederhana
+  if (p1.includes("manusia") && p1.includes("mati") && p2.includes("adalah manusia")) {
+    hasil = "Kesimpulan: Jadi, " + p2.split(" ")[0] + " akan mati.";
+  } else {
+    hasil = "Kesimpulan tidak dapat ditarik dari premis yang diberikan.";
+  }
+
+  document.getElementById("hasil").innerText = hasil;
+}
+</script>
+
+</body>
+</html>
